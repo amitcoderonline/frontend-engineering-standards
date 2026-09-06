@@ -33,6 +33,38 @@ if (me.permissions.includes('revenue.read')) {
 }
 ```
 
+1. What is wrong with -
+if (localStorage.getItem('role') === 'admin') {
+  showRevenueDashboard();
+}
+
+It is tempting because it is simple:
+
+"If the user's role is admin, show the revenue dashboard."
+
+But there are several problems.
+
+Problem 1: localStorage is controlled by the browser
+
+localStorage is client-side data. A user can open browser DevTools and change it.
+
+For example:
+
+localStorage.setItem('role', 'admin');
+
+Now:
+
+localStorage.getItem('role')
+
+returns:
+
+admin
+
+Your UI will therefore think the user is an admin.
+
+Important: this does not necessarily mean the attacker has access to the backend data. It means you must never treat a client-controlled value as proof of authorization.
+
+
 The API must still reject unauthorized `/api/revenue` calls.
 
 See [XSS and input handling](xss-and-input-handling.md), [secrets and configuration](secrets-and-configuration.md), and [dependency security](dependency-security.md).
