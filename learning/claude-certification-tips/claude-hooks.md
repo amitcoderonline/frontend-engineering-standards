@@ -41,6 +41,8 @@ Hook
 Claude Code has around 30 hook events, but for certification you should focus on the most important ones. ([Claude Academy][1])
 
 ---
+<img width="343" height="885" alt="image" src="https://github.com/user-attachments/assets/834cc7d2-21fe-41a9-9d68-718eb27daac9" />
+
 
 # 1. What Is a Hook?
 
