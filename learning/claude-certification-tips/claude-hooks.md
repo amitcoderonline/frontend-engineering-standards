@@ -1,4 +1,3 @@
-````markdown
 # Claude Code — Hooks
 
 ## Overview
